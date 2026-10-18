@@ -1,0 +1,44 @@
+This is a **sample article** used to test long-form layout: headings, tables, code, lists, and references. It is not a published piece of research.
+
+## The problem with good intentions
+
+Early-stage teams rarely set out to exaggerate. Claims drift. A prototype becomes a "platform", a conversation becomes a "partnership", and a placeholder biography written to test a layout ends up in production because nobody remembered to remove it.
+
+The fix is not more discipline. It is making the honest outcome the default outcome of the build.
+
+## Make status part of the data
+
+Every claim the site can make is a record with a small governance block. Rendering code never decides what is true; it only asks whether a record is publishable.
+
+```ts
+export function isPublishable(g: Governance, opts: { demo: boolean }) {
+  if (g.approval === "approved" && g.verification === "verified") return true;
+  return opts.demo; // preview builds show drafts and fixtures, clearly badged
+}
+```
+
+### What each status means
+
+| Field | Value | Effect on the public site |
+| --- | --- | --- |
+| `approval` | `approved` | Eligible, if also verified |
+| `approval` | `draft` | Hidden |
+| `approval` | `demo` | Hidden; visible only in local preview |
+| `verification` | `verified` | Eligible, if also approved |
+| `verification` | `placeholder` | Hidden |
+
+## Empty is a valid state
+
+When nothing has been approved, a section should disappear or say so plainly. A truthful empty state is better than a convincing fake, and much better than "coming soon".
+
+1. Hide the navigation link when its collection is empty.
+2. Remove the homepage section entirely.
+3. Keep the page reachable with a short, honest explanation.
+
+## Guard the deployment, not just the code
+
+A demo flag that only works by convention will eventually be left on. The build itself should refuse to ship demo content to production, and preview builds should send a `noindex` header so they never appear in search results.
+
+## Closing note
+
+None of this replaces judgment. It just means that when judgment lapses, the default is silence rather than fiction.

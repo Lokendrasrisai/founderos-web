@@ -1,0 +1,10 @@
+Lighthouse 13.5.0 · Chromium 153 headless · local 'next start' production build · production content · 2026-10-18T20:24Z
+Lab data with Lighthouse's simulated throttling (mobile = Moto G Power / slow 4G). Not field data.
+/          mobile   performance=98 accessibility=100 best-practices=100 seo=100 | LCP=2.3 s CLS=0 TBT=90 ms
+/          desktop  performance=100 accessibility=100 best-practices=100 seo=100 | LCP=0.7 s CLS=0 TBT=0 ms
+/about     mobile   performance=99 accessibility=100 best-practices=100 seo=100 | LCP=2.1 s CLS=0 TBT=50 ms
+/about     desktop  performance=100 accessibility=100 best-practices=100 seo=100 | LCP=0.6 s CLS=0 TBT=0 ms
+/contact   mobile   performance=100 accessibility=100 best-practices=100 seo=100 | LCP=1.7 s CLS=0 TBT=40 ms
+/contact   desktop  performance=100 accessibility=100 best-practices=100 seo=100 | LCP=0.6 s CLS=0 TBT=0 ms
+/privacy   mobile   performance=98 accessibility=100 best-practices=100 seo=100 | LCP=2.4 s CLS=0 TBT=50 ms
+/privacy   desktop  performance=100 accessibility=100 best-practices=100 seo=100 | LCP=0.5 s CLS=0 TBT=0 ms
